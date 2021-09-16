@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package Data;
-
+import java.io.*;
 /**
  *
  * @author nkiez
  */
 public class NewClass {
-    
+    public static void main(String args[]){
+        System.out.print("Test Commit & Push to Repo on GitHub");
+    }
 }

@@ -14,23 +14,23 @@ import javax.swing.JOptionPane;
 public class Client extends javax.swing.JFrame {
 
     public Client() {
-        initComponents();         
-    }    
+        initComponents();
+    }
 
     // <editor-fold desc="Mã Hóa Caesar">  
-    char mahoakt(char c,int k){
+    char mahoakt(char c, int k) {
         if (!Character.isLetter(c)) {
             return c;
         }
-        return (char) ((((Character.toUpperCase(c)-'A')+k)%26+26)%26+'A');
+        return (char) ((((Character.toUpperCase(c) - 'A') + k) % 26 + 26) % 26 + 'A');
     }
-    
+
     public String MaHoa(String VB, int k) {
-       String kq="";
+        String kq = "";
         for (int i = 0; i < VB.length(); i++) {
-            kq+=mahoakt(VB.charAt(i), k);
+            kq += mahoakt(VB.charAt(i), k);
         }
-        return kq;        
+        return kq;
     }
     // </editor-fold>  
 
@@ -119,20 +119,26 @@ public class Client extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnMaHoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMaHoaActionPerformed
-       TxtSauMH.setText( MaHoa(TxtVanBan.getText(), Integer.parseInt(TxtKey.getText())));
+        if (TxtVanBan.getText().equals("") || TxtKey.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Xin Vui Lòng Nhập Văn Bản Và Key Trước!");
+        } else {
+            TxtSauMH.setText(MaHoa(TxtVanBan.getText(), Integer.parseInt(TxtKey.getText())));
+        }
     }//GEN-LAST:event_BtnMaHoaActionPerformed
     Socket client;
     private void BtnGuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuiActionPerformed
         //Gửi Văn Bản Đã Mã Hóa
-        try { 
-           client = new Socket("localhost", 6789);
-            DataOutputStream output = new DataOutputStream(client.getOutputStream());
-            
-            output.writeUTF(TxtSauMH.getText());
-            output.writeInt(Integer.parseInt(TxtKey.getText()));
-            output.flush();
-            
-           
+        try {
+            if (TxtSauMH.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Vui Mã Hóa Văn Bản Trước !");
+            } else {
+                client = new Socket("localhost", 6789);
+                DataOutputStream output = new DataOutputStream(client.getOutputStream());
+
+                output.writeUTF(TxtSauMH.getText());
+                output.writeInt(Integer.parseInt(TxtKey.getText()));
+                output.flush();
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -141,10 +147,10 @@ public class Client extends javax.swing.JFrame {
     private void BtnNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNhanActionPerformed
         try {
             DataInputStream input = new DataInputStream(client.getInputStream());
-            JOptionPane.showMessageDialog(null, "Độ Dài Ban Đầu Của Ký Tự Là :"+input.readInt());
+            JOptionPane.showMessageDialog(null, "Độ Dài Ban Đầu Của Ký Tự Là :" + input.readInt());
         } catch (Exception e) {
         }
-      
+
     }//GEN-LAST:event_BtnNhanActionPerformed
 
     public static void main(String args[]) {

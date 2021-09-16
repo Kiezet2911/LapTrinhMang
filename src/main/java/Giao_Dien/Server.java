@@ -54,6 +54,7 @@ public class Server extends javax.swing.JFrame {
         });
         getContentPane().add(BtnSent, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 290, 40));
 
+        TxtVBMaHoa.setEditable(false);
         TxtVBMaHoa.setColumns(20);
         TxtVBMaHoa.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         TxtVBMaHoa.setRows(5);
@@ -62,6 +63,7 @@ public class Server extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 390, 120));
 
+        TxtGiaiMa.setEditable(false);
         TxtGiaiMa.setColumns(20);
         TxtGiaiMa.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         TxtGiaiMa.setRows(5);
@@ -100,6 +102,7 @@ public class Server extends javax.swing.JFrame {
                     try {
                         while (true) {
                             client = server.accept();
+                            JOptionPane.showMessageDialog(null,"Kết Nối Thành Công!");
                             DataInputStream input = new DataInputStream(client.getInputStream());
 
                             String data = input.readUTF();

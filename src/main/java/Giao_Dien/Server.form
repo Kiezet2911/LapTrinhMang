@@ -71,6 +71,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="TxtVBMaHoa">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="0"/>
@@ -95,6 +96,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="TxtGiaiMa">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="0"/>

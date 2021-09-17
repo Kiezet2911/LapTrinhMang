@@ -67,7 +67,7 @@ public class Server extends javax.swing.JFrame {
         TxtGiaiMa.setColumns(20);
         TxtGiaiMa.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         TxtGiaiMa.setRows(5);
-        TxtGiaiMa.setText("\nVăn Bản Sau Khi Được Giải Mã");
+        TxtGiaiMa.setText("\n\nVăn Bản Sau Khi Được Giải Mã");
         jScrollPane2.setViewportView(TxtGiaiMa);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 390, 120));
@@ -144,36 +144,40 @@ public class Server extends javax.swing.JFrame {
 
     
     //<editor-fold desc=" Đếm Ký Tự ">
-      public static void DemKyTu(String str){
+      public String DemKyTu(String str){
         int counter[] = new int[256];
         int len = str.length();
+        String Tong = "";
         for (int i = 0; i < len; i++)
             counter[str.charAt(i)]++;
         char array[] = new char[str.length()];
         for (int i = 0; i < len; i++) {
             array[i] = str.charAt(i);
             int flag = 0;
+            String C="";
             for (int j = 0; j <= i; j++) {
                 if (str.charAt(i) == array[j])
                     flag++;
             }
-             if (flag == 1)
-                 JOptionPane.showMessageDialog(null,"Số lần xuất hiện của " + str.charAt(i)+ " trong chuỗi:" + counter[str.charAt(i)]);
-        }
+             if (flag == 1 && str.charAt(i) !=' ')                 
+                 C = "\nSố lần xuất hiện của " + str.charAt(i)+ " trong chuỗi : " + counter[str.charAt(i)];
+                 Tong = Tong + C ;               
+        }        
+        return Tong;
     }
     //</editor-fold>
       
       
     private void BtnSentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSentActionPerformed
-        //Độ dài Ký Tự (Không Biết Đúng Hay Sai)
+        //Độ dài Ký Tự (Không Biết Đúng Hay Sai)      
         DemKyTu(TxtGiaiMa.getText());
-//        try {
-//            DataOutputStream output = new DataOutputStream(client.getOutputStream());
-//            output.writeInt(dodai);
-//            output.flush();
-//           
-//        } catch (Exception e) {
-//        }
+        try {
+            DataOutputStream output = new DataOutputStream(client.getOutputStream());
+            output.writeUTF(DemKyTu(TxtGiaiMa.getText()));
+            output.flush();
+           
+        } catch (Exception e) {
+        }
 
     }//GEN-LAST:event_BtnSentActionPerformed
 

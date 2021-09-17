@@ -147,7 +147,7 @@ public class Client extends javax.swing.JFrame {
     private void BtnNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNhanActionPerformed
         try {
             DataInputStream input = new DataInputStream(client.getInputStream());
-            JOptionPane.showMessageDialog(null, "Độ Dài Ban Đầu Của Ký Tự Là :" + input.readInt());
+            JOptionPane.showMessageDialog(null,input.readUTF());
         } catch (Exception e) {
         }
 

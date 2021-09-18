@@ -43,7 +43,7 @@ public class Server extends javax.swing.JFrame {
                 BtnListenActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnListen, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 90, 40));
+        getContentPane().add(BtnListen, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 120, 50));
 
         BtnSent.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnSent.setText("Đếm và Gửi Số Lần Ký Tự Xuất Hiện Về");
@@ -52,7 +52,7 @@ public class Server extends javax.swing.JFrame {
                 BtnSentActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnSent, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 290, 40));
+        getContentPane().add(BtnSent, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 380, 40));
 
         TxtVBMaHoa.setEditable(false);
         TxtVBMaHoa.setColumns(20);
@@ -70,7 +70,7 @@ public class Server extends javax.swing.JFrame {
         TxtGiaiMa.setText("\n\nVăn Bản Sau Khi Được Giải Mã");
         jScrollPane2.setViewportView(TxtGiaiMa);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 390, 120));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 390, 120));
 
         BtnGiaiMa.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         BtnGiaiMa.setText("Giải Mã");
@@ -79,7 +79,7 @@ public class Server extends javax.swing.JFrame {
                 BtnGiaiMaActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnGiaiMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 110, 50));
+        getContentPane().add(BtnGiaiMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 110, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Mã Hóa.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

@@ -59,15 +59,15 @@ public class Client extends javax.swing.JFrame {
 
         JLBKEY.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         JLBKEY.setText("Key");
-        jPanel1.add(JLBKEY, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 260, 40));
+        jPanel1.add(JLBKEY, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 40, 40));
 
         JLBVANBAN.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         JLBVANBAN.setText("Văn Bản Cần Mã Hóa");
-        jPanel1.add(JLBVANBAN, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 260, 40));
+        jPanel1.add(JLBVANBAN, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 180, 40));
 
         JLBSauMH.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         JLBSauMH.setText("Văn Bản Sau Khi Mã Hóa");
-        jPanel1.add(JLBSauMH, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 260, 40));
+        jPanel1.add(JLBSauMH, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 210, 40));
 
         TxtVanBan.setColumns(20);
         TxtVanBan.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -75,10 +75,10 @@ public class Client extends javax.swing.JFrame {
         TxtVanBan.setBorder(null);
         jScrollPane1.setViewportView(TxtVanBan);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 380, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 380, 130));
 
         TxtKey.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jPanel1.add(TxtKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 370, 50));
+        jPanel1.add(TxtKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 370, 50));
 
         TxtSauMH.setColumns(20);
         TxtSauMH.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -86,7 +86,7 @@ public class Client extends javax.swing.JFrame {
         TxtSauMH.setBorder(null);
         jScrollPane2.setViewportView(TxtSauMH);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 380, 130));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 380, 130));
 
         BtnMaHoa.setText("Mã Hóa");
         BtnMaHoa.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +94,7 @@ public class Client extends javax.swing.JFrame {
                 BtnMaHoaActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnMaHoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, -1, -1));
+        jPanel1.add(BtnMaHoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, 50));
 
         BtnGui.setText("Gửi");
         BtnGui.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +102,7 @@ public class Client extends javax.swing.JFrame {
                 BtnGuiActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnGui, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, 70, -1));
+        jPanel1.add(BtnGui, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 70, 60));
 
         BtnNhan.setText("Nhận số ký tự");
         BtnNhan.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +110,7 @@ public class Client extends javax.swing.JFrame {
                 BtnNhanActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnNhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 110, 40));
+        jPanel1.add(BtnNhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 540, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 580));
 
